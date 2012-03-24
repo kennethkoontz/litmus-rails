@@ -5,7 +5,9 @@ Litmus::Application.routes.draw do
     resources :test_cases
   end
 
-  resources :projects
+  resources :projects do
+    resources :test_suites
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
