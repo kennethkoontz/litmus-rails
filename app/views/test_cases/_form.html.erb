@@ -28,8 +28,7 @@
     <%= f.text_area :expected_results %>
   </div>
   <div class="field">
-    <%= f.label :test_suite %><br />
-    <%= f.text_field :test_suite %>
+    <%= f.hidden_field :test_suite_id, :value => params[:test_suite_id] %>
   </div>
   <div class="actions">
     <%= f.submit %>

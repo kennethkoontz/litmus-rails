@@ -18,7 +18,7 @@
     <td><%= test_case.setup %></td>
     <td><%= test_case.test_plan %></td>
     <td><%= test_case.expected_results %></td>
-    <td><%= test_case.test_suite %></td>
+    <td><%= test_case.test_suite.title %></td>
     <td><%= link_to 'Show', test_case %></td>
     <td><%= link_to 'Edit', edit_test_case_path(test_case) %></td>
     <td><%= link_to 'Destroy', test_case, confirm: 'Are you sure?', method: :delete %></td>
