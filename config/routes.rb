@@ -1,7 +1,9 @@
 Litmus::Application.routes.draw do
   resources :test_cases
 
-  resources :test_suites
+  resources :test_suites do
+    resources :test_cases
+  end
 
   resources :projects
 
