@@ -3,8 +3,6 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Description</th>
-    <th>Project</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,8 +11,6 @@
 <% @test_suites.each do |test_suite| %>
   <tr>
     <td><%= test_suite.title %></td>
-    <td><%= test_suite.description %></td>
-    <td><%= test_suite.project.title %></td>
     <td><%= link_to 'Show', test_suite %></td>
     <td><%= link_to 'Edit', edit_test_suite_path(test_suite) %></td>
     <td><%= link_to 'Destroy', test_suite, confirm: 'Are you sure?', method: :delete %></td>

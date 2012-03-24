@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
+<h1>
   <%= @test_suite.title %>
-</p>
+</h1>
+
+<p id="notice"><%= notice %></p>
 
 <p>
   <b>Description:</b>
@@ -15,6 +14,29 @@
   <%= @test_suite.project.title %>
 </p>
 
-
 <%= link_to 'Edit', edit_test_suite_path(@test_suite) %> |
 <%= link_to 'Back', test_suites_path %>
+
+<h2>Test Cases</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @test_suite.test_cases.each do |test_case| %>
+  <tr>
+    <td><%= test_case.title %></td>
+    <td><%= link_to 'Show', test_case %></td>
+    <td><%= link_to 'Edit', edit_test_case_path(test_case) %></td>
+    <td><%= link_to 'Destroy', test_case, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<p>  
+<%= link_to 'New Test Case', new_test_suite_test_case_path(@test_suite)  %> 
+<p>
