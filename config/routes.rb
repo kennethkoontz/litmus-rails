@@ -1,4 +1,10 @@
 Litmus::Application.routes.draw do
+  resources :test_cases
+
+  resources :test_suites
+
+  resources :projects
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @test_suite.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @test_suite.description %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @test_suite.project %>
+</p>
+
+
+<%= link_to 'Edit', edit_test_suite_path(@test_suite) %> |
+<%= link_to 'Back', test_suites_path %>
