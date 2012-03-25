@@ -1,42 +1,53 @@
-<h1>
-  <%= @test_suite.title %>
-</h1>
+<div class="page-header">
+  <h1>
+    <%= @test_suite.title %>
+    <small>
+      <%= link_to 'edit', edit_project_test_suite_path(@test_suite) %>
+    </small>
+  </h1>
+</div>
 
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<div class="alert">
+  <a class="close" data-dismiss="alert">×</a>
+  <p id="notice"><%= notice %></p>
+</div>
+<% end %>
 
-<p>
-  <b>Description:</b>
-  <%= @test_suite.description %>
-</p>
-
-<p>
-  <b>Project:</b>
-  <%= @test_suite.project.title %>
-</p>
-
-<%= link_to 'Edit', edit_test_suite_path(@test_suite) %> |
-<%= link_to 'Back', test_suites_path %>
+<dl>
+  <dt>Project:</dt>
+  <dd><%= @test_suite.project.title %></dd>
+  <dt>Description:</dt>
+  <dd><%= @test_suite.description %></dd>
+</dl>
 
 <h2>Test Cases</h2>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% if @test_suite.test_cases.empty? == false %>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
 
-<% @test_suite.test_cases.each do |test_case| %>
-  <tr>
-    <td><%= test_case.title %></td>
-    <td><%= link_to 'Show', test_case %></td>
-    <td><%= link_to 'Edit', edit_test_case_path(test_case) %></td>
-    <td><%= link_to 'Destroy', test_case, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @test_suite.test_cases.each do |test_case| %>
+      <tr>
+        <td><%= link_to test_case.title, test_case %></td>
+        <td><%= link_to raw('<i class="icon-edit"></i>edit'), edit_test_case_path(test_case), :class => 'btn btn-small' %></td>
+        <td><%= link_to raw('<i class="icon-trash"></i>trash'), test_case, method: :delete, :class => 'btn btn-small' %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
+<% else %>
+  <div class="alert alert-info">
+    <p>
+    <%= @test_suite.title %> has no test cases.
+    <%= link_to 'Create one!', new_test_suite_test_case_path(@test_suite) %>
+    </p>
+  </div>
+<% end %>
 
-<p>  
-<%= link_to 'New Test Case', new_test_suite_test_case_path(@test_suite)  %> 
-<p>
+<%= link_to raw('<i class="icon-plus icon-white"></i>&nbsp;Test Case'), new_test_suite_test_case_path(@test_suite), :class => 'btn btn-success'%> 
