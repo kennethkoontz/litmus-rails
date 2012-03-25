@@ -1,23 +1,31 @@
-<h1>Projects</h1>
+<div class="page-header">
+  <h1>Projects</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.title %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<% if @projects.empty? == false %>
+<table class="table table-bordered table-striped" >
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to project.title, project %></td>
+        <td><%= link_to raw('<i class="icon-edit"></i>edit'), edit_project_path(project), :class => 'btn btn-small' %></td>
+        <td><%= link_to raw('<i class="icon-trash"></i>trash'), project, method: :delete, :class => 'btn btn-small' %></td>
+      </tr>
+    <% end %>
+</tbody>
 </table>
+<% else %>
+  <div class="alert alert-info">
+    <p>
+      You are not managing any projects.
+      <%= link_to 'Create one!', new_project_path %>
+    </p>
+  </div>
+<% end %>
 
-<br />
-
-<%= link_to 'New Project', new_project_path %>
+<%= link_to raw('<i class="icon-plus icon-white"></i>&nbsp;Project'), new_project_path, :class => 'btn btn-success'%> 

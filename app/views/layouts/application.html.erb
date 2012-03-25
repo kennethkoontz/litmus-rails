@@ -8,7 +8,28 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to 'Litmus', '/', :class => "brand" %>
+      <ul class="nav">
+        <li class="active">
+        <link
+        </li>
+        <li>
+        <%= link_to 'Projects', '/projects'%>
+        </li>
+      </ul>
+      <ul class="nav pull-right">
+        <li><a href="/sign_in">Sign In</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
