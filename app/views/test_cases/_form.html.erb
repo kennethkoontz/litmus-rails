@@ -11,26 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>
     <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :setup %><br />
-    <%= f.text_area :setup %>
-  </div>
-  <div class="field">
-    <%= f.label :test_plan %><br />
-    <%= f.text_area :test_plan %>
-  </div>
-  <div class="field">
-    <%= f.label :expected_results %><br />
-    <%= f.text_area :expected_results %>
-  </div>
-  <div class="field">
-    <%= f.hidden_field :test_suite_id, :value => params[:test_suite_id] %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.label :setup %>
+    <%= f.text_area :setup, :size => '5x5' %>
+    <%= f.label :test_plan %>
+    <%= f.text_area :test_plan, :size => '5x5' %>
+    <%= f.label :expected_results %>
+    <%= f.text_area :expected_results, :size => '5x5' %>
+    <%= f.hidden_field :test_suite_id, :value => (@test_case.test_suite_id or params[:test_suite_id]) %><br />
+    <%= f.submit "update", :class => 'btn btn-success' %>
 <% end %>

@@ -1,30 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1>
+    <%= @test_case.title %>
+    <small>
+      <%= link_to 'edit', edit_test_case_path(@test_case) %>
+    </small>
+  </h1>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @test_case.title %>
-</p>
+<% if notice %>
+<div class="alert">
+  <a class="close" data-dismiss="alert">x</a>
+  <dl id="notice"><%= notice %></p>
+</div>
+<% end %>
 
-<p>
-  <b>Setup:</b>
-  <%= @test_case.setup %>
-</p>
+<dl>
+  <dt>Test suite:</dt>
+  <dd><%= link_to @test_case.test_suite.title, test_suite_path %></dd>
+</dl>
 
-<p>
-  <b>Test plan:</b>
-  <%= @test_case.test_plan %>
-</p>
+<dl>
+  <dt>Setup:</dt>
+  <dd><%= @test_case.setup %></dd>
+</dl>
 
-<p>
-  <b>Expected results:</b>
-  <%= @test_case.expected_results %>
-</p>
+<dl>
+  <dt>Test plan:</dt>
+  <dd><%= @test_case.test_plan %></dd>
+</dl>
 
-<p>
-  <b>Test suite:</b>
-  <%= @test_case.test_suite.title %>
-</p>
-
-
-<%= link_to 'Edit', edit_test_case_path(@test_case) %> |
-<%= link_to 'Back', test_cases_path %>
+<dl>
+  <dt>Expected results:</dt>
+  <dd><%= @test_case.expected_results %></dd>
+</dl>

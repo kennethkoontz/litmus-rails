@@ -16,7 +16,7 @@
 
 <dl>
   <dt>Project:</dt>
-  <dd><%= @test_suite.project.title %></dd>
+  <dd><%= link_to @test_suite.project.title, @test_suite.project %></dd>
   <dt>Description:</dt>
   <dd><%= @test_suite.description %></dd>
 </dl>

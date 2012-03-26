@@ -1,5 +1,7 @@
-<h1>New test_case</h1>
+<div class="page-header">
+  <h1>New Test Case</h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', test_cases_path %>
+<%= link_to 'Back', test_suite_path(params[:test_suite_id]) %>

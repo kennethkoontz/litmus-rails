@@ -1,6 +1,10 @@
-<h1>Editing test_case</h1>
+<div class="page-header">
+  <h1>
+    Editing
+    <%= @test_case.title %>
+  </h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @test_case %> |
-<%= link_to 'Back', test_cases_path %>
+<%= link_to 'Cancel', @test_case %>

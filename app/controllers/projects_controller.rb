@@ -15,6 +15,14 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
 
+    # Create Test Cases array.
+    @test_cases = []
+    for test_suite in @project.test_suites.each
+      for test_case in test_suite.test_cases.each
+        @test_cases.append test_case
+      end
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }

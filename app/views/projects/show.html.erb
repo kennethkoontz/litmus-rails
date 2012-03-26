@@ -17,9 +17,7 @@
 <dl>
   <dt>Description:</dt>
   <dd><%= @project.description %></dd>
-</p>
-
-<h2>Test Suites</h2>
+</dl>
 
 <% if @project.test_suites.empty? == false %>
 <table class="table table-bordered table-striped">
@@ -47,5 +45,6 @@
     </p>
   </div>
 <% end %>
-
 <%= link_to raw('<i class="icon-plus icon-white"></i>&nbsp;Test Suite'), new_project_test_suite_path(@project), :class => 'btn btn-success'%> 
+
+</div>
