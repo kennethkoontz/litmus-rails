@@ -7,12 +7,7 @@
   </h1>
 </div>
 
-<% if notice %>
-<div class="alert">
-  <a class="close" data-dismiss="alert">×</a>
-  <p id="notice"><%= notice %></p>
-</div>
-<% end %>
+<%= render :partial => 'shared/notice_display', :notice => notice %>
 
 <dl>
   <dt>Project:</dt>
