@@ -6,6 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
 <div class="navbar navbar-fixed-top">
@@ -27,8 +28,19 @@
   </div>
 </div>
 
-<div class="container">
-  <%= yield %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2" >
+      <!--Sidebar content-->
+      <div class="page-header">
+        <h1>sidebar</h1>
+      </div>
+    </div>
+    <div class="span10">
+      <!--Body content-->
+      <%= yield %>
+    </div>
+  </div>
 </div>
 
 </body>
