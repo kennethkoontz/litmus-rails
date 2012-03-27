@@ -35,7 +35,6 @@
     <% @test_suite.test_cases.each do |test_case| %>
       <tr>
         <td><%= link_to test_case.title, test_case %></td>
-        <td><%= link_to raw('<i class="icon-edit"></i>edit'), edit_test_case_path(test_case), :class => 'btn btn-small' %></td>
         <td><%= link_to raw('<i class="icon-trash"></i>trash'), test_case, method: :delete, :class => 'btn btn-small' %></td>
       </tr>
     <% end %>

@@ -31,7 +31,6 @@
     <% @project.test_suites.each do |test_suite| %>
       <tr>
         <td><%= link_to test_suite.title, test_suite %></td>
-        <td><%= link_to raw('<i class="icon-edit"></i>edit'), edit_test_suite_path(test_suite), :class => 'btn btn-small' %></td>
         <td><%= link_to raw('<i class="icon-trash"></i>trash'), test_suite, method: :delete, :class => 'btn btn-small' %></td>
       </tr>
     <% end %>
