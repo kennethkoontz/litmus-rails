@@ -19,3 +19,6 @@
 
 # Ignore Gemfile.lock
 Gemfile.lock
+
+# Ignore database config for now as to not include the password for the db.
+config/database.yml
