@@ -2,7 +2,7 @@ class TestCase < ActiveRecord::Base
   belongs_to :test_suite
 
   define_index do
-    indexes title,
+    indexes title
     indexes setup
     indexes test_plan
     indexes expected_results
