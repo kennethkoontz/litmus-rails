@@ -16,3 +16,6 @@
 
 # Ignore swp files.
 *.swp
+
+# Ignore Gemfile.lock
+Gemfile.lock

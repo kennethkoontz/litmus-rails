@@ -55,5 +55,10 @@ module Litmus
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-  end
+
+    # Configure thinking-sphinx.
+    config.gem(
+        'thinking-sphinx', :version => '1.4.10'
+    )
+  end 
 end
