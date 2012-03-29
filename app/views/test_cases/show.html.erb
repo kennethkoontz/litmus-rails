@@ -16,15 +16,15 @@
 
 <dl>
   <dt>Setup:</dt>
-  <dd><%= @test_case.setup %></dd>
+  <dd><%= simple_format(@test_case.setup) %></dd>
 </dl>
 
 <dl>
   <dt>Test plan:</dt>
-  <dd><%= @test_case.test_plan %></dd>
+  <dd><%= simple_format(@test_case.test_plan) %></dd>
 </dl>
 
 <dl>
   <dt>Expected results:</dt>
-  <dd><%= @test_case.expected_results %></dd>
+  <dd><%= simple_format(@test_case.expected_results) %></dd>
 </dl>

@@ -13,7 +13,7 @@
   <dt>Project:</dt>
   <dd><%= link_to @test_suite.project.title, @test_suite.project %></dd>
   <dt>Description:</dt>
-  <dd><%= @test_suite.description %></dd>
+  <dd><%= simple_format(@test_suite.description) %></dd>
 </dl>
 
 <h2>Test Cases</h2>

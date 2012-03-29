@@ -11,7 +11,7 @@
 
 <dl>
   <dt>Description:</dt>
-  <dd><%= @project.description %></dd>
+  <dd><%= simple_format(@project.description) %></dd>
 </dl>
 
 <% if @project.test_suites.empty? == false %>
