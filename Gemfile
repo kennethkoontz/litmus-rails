@@ -39,3 +39,4 @@ gem 'jquery-rails'
 
 gem "twitter-bootstrap-rails"
 gem "thinking-sphinx"
+gem "mysql2"
