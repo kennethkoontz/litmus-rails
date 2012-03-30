@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>Search</h1>
+</div>
+
+<% if @results.empty? == false %> 
+<table class="table table-bordered table-striped" >
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= link_to result.title, result %></td>
+        <td><%= link_to raw('<i class="icon-trash"></i>trash'), result, method: :delete, :class => 'btn btn-small' %></td>
+      </tr>
+    <% end %>
+<% else %>
+  <div class="alert alert-info">
+    <p>
+      Darn! Your search query returned no results.
+    </p>
+  </div>
+<% end %>
+  
+</tbody>
+</table>
