@@ -11,6 +11,7 @@ class TestCase < ActiveRecord::Base
     indexes test_suite.description, :as => 'test_suite_description'
     indexes project.title, :as => 'project_title'
     indexes project.description, :as => 'project_description'
+    set_property :delta => true
   end
 
 end

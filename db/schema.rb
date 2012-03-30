@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330061910) do
+ActiveRecord::Schema.define(:version => 20120330065105) do
 
   create_table "projects", :force => true do |t|
     t.string   "title"
@@ -26,9 +26,10 @@ ActiveRecord::Schema.define(:version => 20120330061910) do
     t.text     "test_plan"
     t.text     "expected_results"
     t.integer  "test_suite_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "project_id"
+    t.boolean  "delta",            :default => true, :null => false
   end
 
   add_index "test_cases", ["test_suite_id"], :name => "index_test_cases_on_test_suite_id"
