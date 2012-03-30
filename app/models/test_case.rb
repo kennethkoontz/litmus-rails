@@ -6,7 +6,9 @@ class TestCase < ActiveRecord::Base
     indexes setup
     indexes test_plan
     indexes expected_results
-    indexes test_suite.title, :as => test_suite_title
+    indexes 
+
+    has test_suite_id, created_at
   end
 
 end
