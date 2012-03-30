@@ -10,8 +10,9 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
-# Ignore all logfiles and tempfiles.
+# Ignore all logfiles, tempfiles, and pidfiles.
 /log/*.log
+/log/*.pid
 /tmp
 
 # Ignore swp files.
@@ -22,3 +23,6 @@ Gemfile.lock
 
 # Ignore database config for now as to not include the password for the db.
 config/database.yml
+
+# Sphinx db
+/db/sphinx/
