@@ -25,6 +25,7 @@ class TestCasesController < ApplicationController
   # GET /test_cases/new.json
   def new
     @test_case = TestCase.new
+    @project_id = TestSuite.find(params[:test_suite_id]).id
 
     respond_to do |format|
       format.html # new.html.erb

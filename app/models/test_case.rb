@@ -7,10 +7,10 @@ class TestCase < ActiveRecord::Base
     indexes setup
     indexes test_plan
     indexes expected_results
-    indexes test_suite.title, :as test_suite_title
-    indexes test_suite.description, :as test_suite_description
-    indexes project.title, :as project_title
-    indexes project.description, :as project_description
+    indexes test_suite.title, :as => 'test_suite_title'
+    indexes test_suite.description, :as => 'test_suite_description'
+    indexes project.title, :as => 'project_title'
+    indexes project.description, :as => 'project_description'
   end
 
 end

@@ -15,6 +15,6 @@
     <%= f.text_field :title %>
     <%= f.label :description %>
     <%= f.text_area :description, :size => '5x5' %>
-    <%= f.hidden_field :project_id, :value => (@test_suite.project_id or params[:project_id]) %></br>
+    <%= f.hidden_field :project_id, :value => (params[:project_id] or @test_suite.project_id) %></br>
     <%= f.submit "update", :class => 'btn btn-success' %>
 <% end %>

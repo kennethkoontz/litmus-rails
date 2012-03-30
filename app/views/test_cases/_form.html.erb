@@ -20,5 +20,6 @@
     <%= f.label :expected_results %>
     <%= f.text_area :expected_results, :size => '5x5' %>
     <%= f.hidden_field :test_suite_id, :value => (@test_case.test_suite_id or params[:test_suite_id]) %><br />
+    <%= f.hidden_field :project_id, :value => (@project_id or @test_case.test_suite.project_id) %><br />
     <%= f.submit "update", :class => 'btn btn-success' %>
 <% end %>
