@@ -11,8 +11,6 @@ Litmus::Application.routes.draw do
     resources :test_suites
   end
 
-  resources :test_runs
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -20,6 +18,9 @@ Litmus::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   match 'search' => 'search#index'
+  match 'test_suites/:id/test_runs/new' => 'test_runs#new'
+  match 'test_suites/:id/test_runs/create' => 'test_runs#create'
+  match 'test_runs' => 'test_runs#index'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
