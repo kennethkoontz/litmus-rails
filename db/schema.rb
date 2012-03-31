@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120331200627) do
+ActiveRecord::Schema.define(:version => 20120331201416) do
 
   create_table "projects", :force => true do |t|
     t.string   "title"
@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(:version => 20120331200627) do
 
   create_table "results", :force => true do |t|
     t.string   "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "test_run_id"
   end
 
   create_table "test_cases", :force => true do |t|
