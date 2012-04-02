@@ -3,7 +3,6 @@ class TestCasesController < ApplicationController
   # GET /test_cases.json
   def index
     @test_cases = TestCase.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @test_cases }

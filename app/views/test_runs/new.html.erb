@@ -1,0 +1,57 @@
+<div class="page-header">
+  <h1>
+    <%= @test_suite.title %>
+    <small>
+      <%= link_to 'edit', edit_project_test_suite_path(@test_suite) %>
+    </small>
+  </h1>
+</div>
+
+<%= render :partial => 'shared/notice_display', :notice => notice %>
+
+<dl>
+  <dt>Project:</dt>
+  <dd><%= link_to @test_suite.project.title, @test_suite.project %></dd>
+  <dt>Description:</dt>
+  <dd><%= simple_format(@test_suite.description) %></dd>
+</dl>
+
+<h2>Test Cases</h2>
+
+<% if @test_suite.test_cases.empty? == false %>
+  <p>
+    <span>select: </span>
+    <%= link_to 'all' %> |
+    <%= link_to 'none' %>
+    </p>
+
+  <%= form_tag './create', :method => "post" %>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Add</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @test_suite.test_cases.each do |test_case| %>
+          <tr>
+            <td style="width: 25px">
+              <%= check_box_tag 'test_case_'+test_case.id.to_s %>
+            </td>
+            <td><%= link_to test_case.title, test_case %></td>
+            <td><%= link_to raw('<i class="icon-trash"></i>trash'), test_case, method: :delete, :class => 'btn btn-small' %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= submit_tag "Add Test Runs", :class => 'btn btn-success' %>
+<% else %>
+  <div class="alert alert-info">
+    <p>
+    <%= @test_suite.title %> has no test cases.
+    <%= link_to 'Create one!', new_test_suite_test_case_path(@test_suite) %>
+    </p>
+  </div>
+<% end %>
+

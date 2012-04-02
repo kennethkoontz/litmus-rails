@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h1>Test Runs</h1>
+</div>
+
+<%= render :partial => 'shared/notice_display', :notice => notice %>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Suite</th>
+      <th>Case</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @test_runs.each do |test_run| %>
+  <tr>
+    <td><%= link_to test_run.test_case.test_suite.title, test_suite_path(test_run.test_case.test_suite) %></td>
+    <td><%= link_to test_run.test_case.title,  test_case_path(test_run.test_case) %></td>
+    <td><%= select_tag test_run.id, options_for_select(Result::STATUSES, test_run.results.last_updated)  %></td>
+  </tr>
+<% end %>
+</table>
