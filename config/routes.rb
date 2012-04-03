@@ -22,6 +22,8 @@ Litmus::Application.routes.draw do
   match 'test_suites/:id/test_runs/create' => 'test_runs#create'
   match 'test_runs' => 'test_runs#index'
 
+  match 'results/add' => 'results#create'
+
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)

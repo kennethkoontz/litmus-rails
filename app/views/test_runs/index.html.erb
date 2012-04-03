@@ -18,7 +18,7 @@
   <tr>
     <td><%= link_to test_run.test_case.test_suite.title, test_suite_path(test_run.test_case.test_suite) %></td>
     <td><%= link_to test_run.test_case.title,  test_case_path(test_run.test_case) %></td>
-    <td><%= select_tag test_run.id, options_for_select(Result::STATUSES, test_run.results.last_updated)  %></td>
+    <td><%= select_tag 'test_run_' + test_run.id.to_s, options_for_select(Result::STATUSES, test_run.results.last_updated)  %></td>
   </tr>
 <% end %>
 </table>
